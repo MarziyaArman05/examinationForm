@@ -27,10 +27,6 @@ input {
   align-items: flex-start;
   text-align: justify;
 }
-/* #examination > div > .course {
-       display: flex;
-       flex-direction: row;
-   } */
 
 h1 {
   text-align: center;
