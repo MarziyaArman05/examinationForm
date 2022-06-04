@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            validation
+        </title>
+    </head>
+
+    <body>
+        <form action="" name="myform">
+            <!-- <form id="form" name="myform" method="post" action="Examination_details.html" onsubmit="return validateform()" >   -->
+
+username: <input type="text" name="firstname"><small id="smallname"></small>        
+            </br></br>
+    <input type="submit" name="sbtn" value="SUBMIT">
+    </form>
+  
+    
+    <script>
+         function validateform(){  
+
+                    var ptrn =/^([0-9\w]*)$/; //regular expression
+                    if(ptrn.test(document.myform.firstname.value)){
+                      document.getElementById("smallname").textContent="user name is valid";
+                    }
+                    else{
+                        document.getElementById("smallname").textContent="user name is invalid";
+                    }
+
+                    // document.myform.first-name.style.backgroundColor = "green";
+
+                    }
+                    document.myform.firstname.addEventListener("keyup", validateform);
+
+
+//   var name=document.myform.first-name.value;   
+//   var name=document.myform.last-name.value;   
+//   if (name==null){  
+//  alert("Name can't be blank");  
+//         return false;  
+//   }
+    </script>
+</body>
+
+</html>

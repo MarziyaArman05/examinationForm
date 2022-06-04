@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> check how to store</title>
+    </head>
+    <style>
+        body {
+            background-color: pink;
+            text-align: center;
+            margin: 15%;
+            padding: 10px;
+        }
+    </style>
+    <body>
+        <div>
+        <label for="username">Username:</label>
+        <input type="text" id="firstname">
+    </div> &nbsp;
+    <div>
+        <textarea id="feedback" rows="20" cols="30" placeholder="write your Comments here"></textarea>
+    </div> 
+</br>
+        <button type="submit" id="sbtn" onclick="feedbk()">Submit</button>
+    </body>
+    <script>
+        function feedbk()
+        {
+            const fname = document.getElementById("firstname");
+            localStorage.setItem("username",fname.value);
+
+            const feed =document.getElementById("feedback");
+            localStorage.setItem("student_feedback",feed.value);
+
+            url="file:///E:/Arman/projects/school%20project/school%20project/feedback.html";
+            window.location.href =url;
+        }
+    </script>
+</html>

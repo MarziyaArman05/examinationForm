@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> feedback check</title>
+    </head>
+    <style>
+    body {
+        background-color: yellowgreen;
+        text-align: center;
+        margin: 5%;
+    }
+    </style>
+    <body>
+        <h1>Thank you for Feedback</h1>
+        <h1 id="firstname"></h1>
+        <h1 id="feedback"></h1>
+        </h1>
+    </body>
+    <script>
+       
+        window.addEventListener("DOMContentLoaded",function(e)
+        {
+            const fname=localStorage.getItem("username");
+            console.log("name",fname);
+            const feed=localStorage.getItem("student_feedback");
+
+             const fname1=document.getElementById("firstname");
+             fname1.innerHTML=fname;
+
+           
+            const feedbk1=document.getElementById("feedback");
+            feedbk1.innerHTML=feed;
+
+
+        });
+    </script>
+</html>

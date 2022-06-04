@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="Examination_form.css" type="text/css">
+        <title> Examination Form  | Examination Details</title>
+    </head>
+    <style>
+       body {
+           background-color: rgb(232, 148, 176);
+           font-weight: bold;
+           font-size: 16px;
+           text-align: justify,center;
+            margin: 8%;
+     
+        }
+        div {
+             border: 2px solid rgb(16, 15, 10);
+             background-color: paleturquoise;
+             align-items: flex-start;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            left: 40%;
+            text-align: center;
+                }
+
+    </style>
+    <body>
+        <div>
+        <h1>Applient Details</h1>
+        First Name <h1 id="first-name"> </h1>    <!--/h1> id of first name -->
+        Last Name: <h1 id="lastname"></h1>
+        Parentage:<h1 id="parentage"></h1>
+        Gender:<h1 id="gender"></h1>
+        Address:<h1 id="address"></h1>
+        State:<h1 id="state"></h1>
+        Mobile-No: <h1 id="mobileno"></h1>
+        postal Code:<h1 id="postalCode"></h1>
+        <!-- <h1 id="course"></h1> -->
+        <h1>
+        Course: <input type="checkbox" id="course_BCA1" disabled="true ">BCA</input>
+        <input type="checkbox" id="course_BSc2" disabled="true">B.Sc</input>
+        <input type="checkbox" id="course_BA3"disabled="true" >B.A</input>
+        <input type="checkbox" id="course_BCom4" disabled="true">B.Com</input></h1>
+        Email id:<h1 id="email"></h1>
+        </div>
+    </body>
+
+   <script >
+     window.addEventListener("DOMContentLoaded",function(e){ //The DOMContentLoaded event fires when the initial HTML document has been completely loaded and parsed, 
+                                                            //without waiting for stylesheets, images, and subframes to finish loading.
+    console.log("hello"); // i write it just for our convient
+    
+    const firstname =localStorage.getItem('username'); // using key name we  get first name from local storage
+    const lastname = localStorage.getItem("lastname");
+    const parentage = localStorage.getItem('parentage');
+    const gender =localStorage.getItem('gender');
+    const address =localStorage.getItem('address');
+    const state = localStorage.getItem('state');
+    const mobileno = localStorage.getItem('mobileno');
+     const postalCode = localStorage.getItem('postalcode');
+ 
+     const course1 = localStorage.getItem('course_BCA');
+     const course2 = localStorage.getItem('course_BSc');
+     const course3 = localStorage.getItem('course_BA');
+     const course4 = localStorage.getItem('course_BCom'); 
+
+     const email =localStorage.getItem('email');
+
+    // console.log('marziya', firstName);
+    // console.log('arman', lastName);
+    console.log("mw",course2,course3,course4)
+
+       
+        
+        const firstname1 = document.getElementById('first-name');  //here we create another variable ,to display the first name on our new page
+        firstname1.innerHTML =firstname; //inner text property 
+
+    
+        const lastname1 = document.getElementById("lastname");
+        lastname1.innerHTML = lastname;
+
+        const parentage1 = document.getElementById('parentage');
+        parentage1.innerHTML =parentage; 
+
+        const gender1 = document.getElementById("gender");
+        gender1.innerHTML = gender;
+
+        const address1 = document.getElementById('address');
+        address1.innerHTML =address;
+
+        const state1 = document.getElementById("state");
+        state1.innerHTML = state;
+
+        const mobileno1 = document.getElementById('mobileno');
+        mobileno1.innerHTML =mobileno; 
+
+        const postalCode1 = document.getElementById("postalCode");
+        postalCode1.innerHTML = postalCode;
+
+        const c1 = document.getElementById('course_BCA1');
+
+        console.log('checkValue',course1)
+        if(course1 === "true"){
+            console.log('BCA')
+            c1.checked = true
+        }
+        
+
+       const c2 = document.getElementById('course_BSc2');
+       if(course2 === "true"){
+        console.log('Bsc')
+        c2.checked = true
+       }
+       
+    
+      
+
+       const c3 = document.getElementById('course_BA3');
+       if(course3 === "true"){
+        c3.checked =true;
+
+       }
+       
+       const c4 = document.getElementById('course_BCom4');
+       console.log("c4b",c4)
+       if(course4 === "true"){
+        c4.checked = true;
+       }
+        
+
+       //console.log("c4bb",c4.checked)
+
+       //console.log("mmnnnn",course2,course3,course4)
+
+     // document.querySelector('.messageCheckbox').checked
+
+        const email1 = document.getElementById("email");
+        email1.innerHTML = email;
+     });
+
+
+</script>
+</html>

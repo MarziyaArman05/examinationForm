@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="Examination_form.css" type="text/css">
+    <title> Examination Form </title>
+</head>
+<style>
+  *{
+      margin: 0%;
+  }
+header,footer {
+    background-color: green;
+}
+nav {
+    height: 60px;
+    width: 1000px;
+}
+nav > ul > li {
+    display: inline;
+    float: left;
+    
+}
+nav > ul > li >a {
+    display: block;
+    padding: 16px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+</style>
+
+<body>
+
+    <header>
+        <nav>
+            <ul> <li><a> <img src="logo.jpg" width="30" height="30"></a></li>
+                <li><a href="Examination_form.html">Home</a></li>
+                <li><a href="student_feedback.html">Feedback</a></li>
+                <li><a href="About.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <form id="form" action="Examination_details.html" method="post" onsubmit="handleRoute()">
+
+        <h1>Examination Form</h1>
+        <div id = "examination">
+            <div class="input-group">
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" name="firstname" minlength="10" maxlength="50" required />
+            </div>
+            <br>
+
+            <div class="input-group">
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="lastname" name="lastname" required minlength="10" />
+            </div><br>
+            <div class="input-group">
+                <label for="Parentage">Parentage:</label>
+                <input type="text" id="parentage" name="parentage" required />
+            </div>
+            <br>
+
+            <div class="input-group">
+                <label>Gender:</label>
+                <select id="gender">
+                    <option value="">Select</option>
+                    <option value="male">male</option>
+                    <option value="female">female</option>
+                    <option value="others">others</option>
+                </select>
+            </div>
+            <br>
+            <div class="input-group">
+                <label for="Address">Address:</label>
+                <input type="text" id="address" name="address" required />
+            </div><br>
+            <div class="course">
+                <label for="state">State:</label>
+                <select id="state" name="state">
+                    <option value="">Select</option>
+                    <option value="Jammu & kashmir">Jammu & kashmir</option>
+                    <option value="UT ladakh">UT ladakh</option>
+                    <option value="Chandighar">Chandighar</option>
+                    <option value="Punjab">punjab</option>
+                    <option value="UP">UP</option>
+                    <option value="MP">MP</option>
+                    <option value="Gujurat">Gujarat</option>
+                </select>
+            </div>
+            <br>
+            <div class="input-group">
+                <label for="Mobile-No.">Mobile No:</label>
+                <input type="tel" id="mobileno" name="mobileno" minlength="10" maxlength="13" required />
+            </div><br>
+            <div class="input-group">
+                <label for="portal-code"> Postal code</label>
+                <input type="number" id="postalCode" name="PostalCode" required />
+            </div><br>
+            <div class="input-group">
+                <label for="course">Course</label>
+                <input type="checkbox" id="course_BCA" value="">BCA</input>
+                <input type="checkbox" id="course_BSc" value="">B.Sc</input>
+                <input type="checkbox" id="course_BA" value="">B.A</input>
+                <input type="checkbox" id="course_BCom" value="">B.Com</input>
+            </div><br>
+
+            <div class="input-group">
+                <label for="email">Email ID:</label>
+                <input type="email" id="email" name="email" required />
+            </div><br>
+        </div>
+        <div class="btn">
+            <input type="reset" value="Reset">
+
+            <button type="submit" value="submit" id="submit" onclick="handleRoute()"> submit </button>
+
+            <button onclick="con()">Continue</button>
+        </div>
+
+
+    </form>
+    <div class="form1">
+        <h2>Please Give us Your Feedback:</h2>
+        <button onclick="form1()">Click here!</button>
+    </div>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="">SHARE</a></li>
+                <li><a href="">CONNECT</a></li>
+                <li><a href="">CONTACT</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+</body>
+<script type="text/javascript">
+    function handleRoute() {
+        const firstname = document.getElementById('first-name');  // variable name i s firstname and id name is first-name
+
+        const lastname = document.getElementById("lastname");
+        const parentage = document.getElementById('parentage');
+        const gender = document.getElementById('gender');
+        const address = document.getElementById("address");
+        const state = document.getElementById('state');
+        const mobileno = document.getElementById('mobileno');
+        const postalCode = document.getElementById('postalCode');
+
+        const course1 = document.getElementById('course_BCA');
+        const course2 = document.getElementById('course_BSc');
+        const course3 = document.getElementById('course_BA');
+        const course4 = document.getElementById('course_BCom');
+
+        const email = document.getElementById('email');
+
+
+        localStorage.setItem('username', firstname.value); //here key name is username and variable name is firstname using .value  u get value and set it.
+        localStorage.setItem('lastname', lastname.value);
+        localStorage.setItem('parentage', parentage.value);
+        localStorage.setItem('gender', gender.value);
+        localStorage.setItem('address', address.value);
+        localStorage.setItem('state', state.value);
+        localStorage.setItem('mobileno', mobileno.value);
+        localStorage.setItem('postalcode', postalCode.value);
+
+        localStorage.setItem('course_BCA', course1.checked);
+        localStorage.setItem('course_BSc', course2.checked);
+        localStorage.setItem('course_BA', course3.checked);
+        localStorage.setItem('course_BCom', course4.checked);
+
+        localStorage.setItem('email', email.value);
+
+
+        console.log('something', course.checked);
+
+        url = "C:\Users\pc\Desktop\arman\school project\Examination_details.html"; //this is a url of next page
+        window.location.href = url;
+    }
+
+
+
+
+    function form1() {
+        window.open("student_feedback.html");
+        //     var name = document.getElementById("first-name").value;
+        //     //console.log(name);
+        //     //alert(name);
+        //    // var string = " hello  "+name;
+        //      document.getElementsByClassName("form1")[0].innerHTML = ""+name;
+        //    // document.getElementsByClassName("form1")[1].innerHTML = string;
+
+    }
+
+
+
+    function con() {
+        window.open("Examination_page2.html");
+    }
+</script>
+
+</html>

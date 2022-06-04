@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> feedback check</title>
+    </head>
+    <style>
+    body {
+        background-color: lightcoral;
+        text-align: center;
+        margin: 5%;
+    }
+    </style>
+    <body>
+        <h1>Document</h1>
+        <h1 id="file"></h1>
+      
+        </h1>
+    </body>
+    <script>
+       
+        window.addEventListener("DOMContentLoaded",function(e)
+        {
+            const mydoc=localStorage.getItem("student_document");
+            console.log("file",mydoc);
+            
+             const mydoc1=document.getElementById("file");
+             mydoc1.innerHTML=mydoc;
+
+           
+
+        });
+    </script>
+</html>

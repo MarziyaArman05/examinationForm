@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+    <title>test</title>
+</head>
+<body>
+   
+    <div class="form1">
+        <input type="text" name="name" id="first-name" placeholder="Enter your Name"/>
+        <input type="text" name="name" id="name" placeholder="Enter your roll no"/>
+        <input type="text" name="name" id="name" placeholder="Enter your address"/>
+        <button onclick="form1()">submit</button>
+    </div>
+    
+</body>
+<script type="text/javascript">
+    function form1()
+    {
+        var name = document.getElementById("first-name").value;
+        //console.log(name);
+       // var string = " hello  "+name;
+         document.getElementsByClassName("form1")[0].innerHTML = ""+name;
+       // document.getElementsByClassName("form1")[0].innerHTML = string;
+        
+    }
+</script>
+</html>

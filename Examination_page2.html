@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Examination_form | Upload Document</title></head>
+   <style>
+       body {
+        background-color: antiquewhite;
+       }
+       div {
+           text-align: center;
+           margin: 7%;
+           }
+           form {
+            border: solid 2px black;
+           background-color: aliceblue;
+           margin: 4%;
+           }
+   </style>
+    <body>
+        <form>
+        <div class="greet">
+        <label for="file">Upload Document</label>
+    <input type="file" id="file"/>
+        </div>
+    <div>
+    <button onclick="funt()">Submit</button>
+</div>
+</form>
+<script type="text/javascript">
+    function funt(){
+
+        // var name = document.getElementById('name').value;
+        //  var string= "preview your details" +name;
+        //  document.getElementsByClassName("funt")[0].innerHTML=string;
+
+        const myfile = document.getElementById('file');
+        localStorage.setItem('student_document',myfile.value);
+
+        url ="file:///C:/Users/pc/Desktop/arman/school%20project/student_document.html";
+        window.location.href = url;
+
+    }
+</script>
+
+    </body>
+</html>
